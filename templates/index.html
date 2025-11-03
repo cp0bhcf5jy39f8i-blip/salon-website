@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}トップページ{% endblock %}
+
+{% block content %}
+
+<!-- 1. トップセクション -->
+<section class="hero-section">
+    <div class="container hero-content">
+        <div class="logo-column">
+            <img src="{{ url_for('static', filename='images/hero-image.jpg') }}" alt="サロンのロゴ">
+        </div>
+        <div class="text-column">
+            <h2>{{ catchphrase_title }}</h2>
+            <p>{{ catchphrase_body|safe }}</p>
+        </div>
+    </div>
+</section>
+
+<!-- 2. メニューセクション -->
+<section class="menu-section">
+    <div class="container">
+        <h2>MENU</h2>
+        <table>
+            <tbody>
+                {% for group in menu_groups %}
+                    <tr>
+                        <th colspan="2" class="menu-category">{{ group.category }}</th>
+                    </tr>
+                    {% for item in group.item_list %}
+                    <tr>
+                        <td>{% if item.name %}{{ item.name }}{% endif %}</td>
+                        <td>{{ item.price }}</td>
+                    </tr>
+                    {% endfor %}
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="menu-notes">
+            <p>{{ addon_note }}</p>
+            <p>{{ tax_note }}</p>
+        </div>
+    </div>
+</section>
+
+<!-- 3. 看板猫セクション -->
+<section class="cat-section">
+    <div class="container cat-content">
+        <div class="cat-text">
+            <h2>{{ cat_section_title }}</h2>
+            <p>{{ cat_section_body|safe }}</p>
+        </div>
+        <div class="cat-photos">
+            <img src="{{ url_for('static', filename='images/cat1.jpg') }}" alt="看板猫の写真1">
+            <img src="{{ url_for('static', filename='images/cat2.jpg') }}" alt="看板猫の写真2">
+        </div>
+    </div>
+</section>
+
+<!-- 4. アクセスセクション -->
+<section class="access-section">
+    <div class="container">
+        <h2>ACCESS</h2>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d3211.629601111871!2d136.49714536120584!3d36.393959772250646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sja!2sjp!4v1762169521375!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <p>住所: 石川県小松市西軽海町4丁目41番地</p>
+    </div>
+</section>
+
+{% endblock %}

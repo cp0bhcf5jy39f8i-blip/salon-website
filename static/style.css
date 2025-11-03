@@ -1,0 +1,64 @@
+/* --- 全体の基本設定 --- */
+html { scroll-behavior: smooth; }
+body { font-family: 'Noto Sans JP', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.8; color: #333; background-color: #fffaf0; margin: 0; }
+
+/* --- ヘッダー --- */
+header { padding: 2rem 0; text-align: center; background: linear-gradient(90deg, #fceabb 0%, #f8b500 100%); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+header h1{font-size:40px;font-weight:700;letter-spacing:.1em;margin:0 0 1.5rem}header a{color:#333;text-decoration:none;transition:opacity .3s}header a:hover{opacity:.7}nav ul{list-style:none;padding:0;margin:0}nav ul li{display:inline;margin:0 25px}nav ul li a{font-size:15px;font-weight:500;letter-spacing:.1em}
+
+/* --- コンテンツの共通コンテナ --- */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
+
+/* --- 各セクションの基本スタイル --- */
+section { padding: 5rem 0; }
+section h2 { text-align: center; font-size: 24px; font-weight: 700; letter-spacing: 0.1em; margin-top: 0; margin-bottom: 2.5rem; }
+
+/* --- 1. トップセクション --- */
+.hero-section { background-color: #fce9c3; padding-top: 2rem; padding-bottom: 2rem; }
+.hero-content { display: flex; align-items: center; justify-content: center; gap: 5rem; }
+.logo-column { flex: 1 1 50%; text-align: center; }
+.logo-column img { max-width: 100%; height: auto; }
+.text-column { flex: 1 1 50%; }
+.text-column h2 { font-size: 30px; font-weight: 700; text-align: left; line-height: 1.6; margin-bottom: 1.5rem; }
+.text-column p { font-size: 18px; text-align: left; line-height: 2.2; }
+
+/* --- 2. メニューセクション --- */
+.menu-section { background-color: #ffedab; }
+table{max-width:700px;margin:0 auto;width:100%;border-collapse:collapse}.menu-category{font-size:18px;font-weight:700;text-align:left;padding:30px 10px 15px 0;border-bottom:2px solid #333;color:#333}td{padding:18px 10px;border-bottom:1px dotted #ccc}td:last-child{text-align:right;font-weight:500}.menu-notes{text-align:center;margin-top:2rem;font-size:14px;color:#555}.menu-notes p{margin:.5rem 0}
+
+/* --- 3. 看板猫セクション --- */
+.cat-section { background-color: #eec980; }
+.cat-content { display: flex; align-items: center; gap: 4rem; }
+.cat-text { flex: 1 1 50%; }
+.cat-text h2 { text-align: left; }
+.cat-text p { text-align: left; line-height: 2.2; }
+.cat-photos { flex: 1 1 50%; display: flex; gap: 1rem; }
+.cat-photos img { width: 50%; border-radius: 12px; }
+
+/* --- 4. アクセスセクション --- */
+.access-section { background-color: #fde6b8; text-align: center; }
+.map-container{width:100%;max-width:900px;margin:0 auto 1rem auto;height:450px}.map-container iframe{width:100%;height:100%;border:none;border-radius:12px}
+
+/* --- フッター --- */
+footer { text-align: center; padding: 3rem; color: #7c7979; font-size: 12px; background-color: #7a7977; }
+
+/* ===============================================
+   スマートフォン向けの調整
+   =============================================== */
+@media (max-width: 768px) {
+    body{font-size:15px}
+    .container{padding:0 1.5rem}
+    section{padding:3.5rem 0}
+    header{padding:1.5rem 0}header h1{font-size:24px}nav ul li{margin:0 15px}nav ul li a{font-size:14px}
+    
+    .hero-content { flex-direction: column; gap: 2.5rem; }
+    .text-column h2, .text-column p { text-align: center; }
+    .text-column h2 { font-size: 26px; }
+    .text-column p { font-size: 16px; }
+
+    .cat-content { flex-direction: column-reverse; gap: 2.5rem; }
+    .cat-text h2, .cat-text p { text-align: center; }
+    
+    section h2 { font-size: 22px; }
+    td { padding: 15px 8px; }
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- ▼▼▼ この3行を丸ごと差し替える ▼▼▼ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- ▲▲▲ ここまで ▲▲▲ -->
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>{{ salon_name }} - {% block title %}{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <!-- ★h1の中身をPythonからの変数に書き換え -->
+        <h1><a href="/">{{ salon_name }}</a></h1>
+        <nav>
+            <ul>
+                <li><a href="/">TOP</a></li>
+                <li><a href="/#menu">MENU</a></li>
+                <li><a href="/#access">ACCESS</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        <p>&copy; 2025 Peu a peu. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
